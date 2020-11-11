@@ -11,6 +11,9 @@ public class Resident {
     private String name;
     private String address;
     private String email;
+    private int adminId;
+    private int calendarId;
+    private int groupId;
 
     public Resident(){}
 
@@ -44,5 +47,29 @@ public class Resident {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(int adminId) {
+        this.adminId = adminId;
+    }
+
+    public int getCalendarId() {
+        return calendarId;
+    }
+
+    public void setCalendarId(int calendarId) {
+        this.calendarId = calendarId;
+    }
+
+    public int getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
     }
 }

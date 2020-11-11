@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import team2.roommates.models.Resident;
 import team2.roommates.repositories.ResidentRepository;
 
+import java.util.List;
+
 @Service
 public class ResidentService {
     @Autowired
@@ -20,5 +22,17 @@ public class ResidentService {
 
     public void deleteResident(int residentId) {
         residentRepository.deleteById(residentId);
+    }
+
+    public List<Resident> getResidentsByAdminId(int adminId) {
+        return residentRepository.getResidentsByAdminId(adminId);
+    }
+
+    public List<Resident> getResidentsByCalendarId(int calendarId) {
+        return residentRepository.getResidentsByCalendarId(calendarId);
+    }
+
+    public List<Resident> getResidentsByGroupId(int groupId) {
+        return residentRepository.getResidentsByGroupId(groupId);
     }
 }
