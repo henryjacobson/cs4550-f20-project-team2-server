@@ -27,7 +27,7 @@ public class InviteController {
         return inviteService.updateInvite(invite);
     }
 
-    @DeleteMapping("/apu/invites/{inviteId}")
+    @DeleteMapping("/api/invites/{inviteId}")
     public void deleteInvite(
             @PathVariable int inviteId
     ) {

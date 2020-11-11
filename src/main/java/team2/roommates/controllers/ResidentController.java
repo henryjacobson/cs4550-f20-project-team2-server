@@ -27,7 +27,7 @@ public class ResidentController {
         return residentService.updateResident(resident);
     }
 
-    @DeleteMapping("/apu/residents/{residentId}")
+    @DeleteMapping("/api/residents/{residentId}")
     public void deleteResident(
             @PathVariable int residentId
     ) {
