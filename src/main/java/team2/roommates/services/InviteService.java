@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import team2.roommates.models.Invite;
 import team2.roommates.repositories.InviteRepository;
 
+import java.util.List;
+
 @Service
 public class InviteService {
     @Autowired
@@ -20,5 +22,9 @@ public class InviteService {
 
     public void deleteInvite(int inviteId) {
         inviteRepository.deleteById(inviteId);
+    }
+
+    public List<Invite> getInvitesForResident(int residentId) {
+        return inviteRepository.getInvitesByResidentId(residentId);
     }
 }

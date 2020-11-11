@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import team2.roommates.models.Invite;
 import team2.roommates.services.InviteService;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "*")
 public class InviteController {
@@ -30,5 +32,12 @@ public class InviteController {
             @PathVariable int inviteId
     ) {
         inviteService.deleteInvite(inviteId);
+    }
+
+    @GetMapping("/api/residents/{residentId}/invites")
+    public List<Invite> getInvitesByResidentId(
+            @PathVariable int residentId
+    ) {
+        return inviteService.getInvitesForResident(residentId);
     }
 }
