@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import team2.roommates.models.Reminder;
 import team2.roommates.repositories.ReminderRepository;
 
+import java.util.List;
+
 @Service
 public class ReminderService {
     @Autowired
@@ -20,5 +22,9 @@ public class ReminderService {
 
     public void deleteReminder(int reminderId) {
         reminderRepository.deleteById(reminderId);
+    }
+
+    public List<Reminder> getRemindersByResidentId(int residentId) {
+        return reminderRepository.getRemindersByResidentId(residentId);
     }
 }

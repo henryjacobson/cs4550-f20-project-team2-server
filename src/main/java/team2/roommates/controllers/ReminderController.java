@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import team2.roommates.models.Reminder;
 import team2.roommates.services.ReminderService;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "*")
 public class ReminderController {
@@ -25,10 +27,17 @@ public class ReminderController {
         return reminderService.updateReminder(reminder);
     }
 
-    @DeleteMapping("/apu/reminders/{reminderId}")
+    @DeleteMapping("/api/reminders/{reminderId}")
     public void deleteReminder(
             @PathVariable int reminderId
     ) {
         reminderService.deleteReminder(reminderId);
+    }
+
+    @GetMapping("/api/residents/{residentId}/reminders")
+    public List<Reminder> getRemindersByResidentId(
+            @PathVariable int residentId
+    ) {
+        return reminderService.getRemindersByResidentId(residentId);
     }
 }
